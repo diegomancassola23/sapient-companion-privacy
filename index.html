@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sapient Companion – Privacy</title>
+<style>
+  :root { --bg:#ffffff; --fg:#1d232b; --muted:#5b6673; --line:#e3e7ec; --accent:#2457a6; --box:#f4f6f9; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#14181d; --fg:#e6eaef; --muted:#9aa5b1; --line:#2a313a; --accent:#7fa8e8; --box:#1b2128; }
+  }
+  :root[data-theme="dark"] { --bg:#14181d; --fg:#e6eaef; --muted:#9aa5b1; --line:#2a313a; --accent:#7fa8e8; --box:#1b2128; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:32px 16px 64px; }
+  h1 { font-size:1.8rem; margin:0 0 4px; }
+  h2 { font-size:1.2rem; margin:32px 0 8px; }
+  p, li { color:var(--fg); }
+  .meta { color:var(--muted); margin:0 0 16px; }
+  .lang { display:flex; gap:12px; margin:0 0 24px; }
+  .lang a { color:var(--accent); }
+  .box { background:var(--box); border:1px solid var(--line); border-radius:8px; padding:12px 16px; }
+  table { width:100%; border-collapse:collapse; margin:8px 0; font-size:.95rem; }
+  th, td { text-align:left; vertical-align:top; padding:8px; border-bottom:1px solid var(--line); }
+  th { color:var(--muted); font-weight:600; }
+  hr { border:0; border-top:1px solid var(--line); margin:56px 0; }
+  .todo { background:#fff3c4; color:#5a4500; padding:0 4px; border-radius:3px; }
+</style>
+</head>
+<body>
+<main>
+
+<nav class="lang"><a href="#it">Italiano</a><a href="#en">English</a></nav>
+
+<!-- ===================== ITALIANO ===================== -->
+<section id="it" lang="it">
+<h1>Sapient Companion – Informativa sulla privacy</h1>
+<p class="meta">Versione del 12 ottobre 2026</p>
+
+<div class="box">
+<p><strong>In breve.</strong> Il Companion è uno strumento di lavoro per consulenti e utenti di Microsoft Dynamics 365. Legge la struttura della pagina in cui ti trovi (nomi ed etichette di campi e maschere) per spiegartela. Non legge i valori dei campi, salvo che tu lo attivi nel registratore. Non manda nulla in rete senza una tua azione, salvo le eccezioni elencate sotto. Non usa pubblicità, profilazione o statistiche anonime, e non vende né cede dati a terzi.</p>
+</div>
+
+<h2>1. Chi è il titolare</h2>
+<p>Titolare del trattamento è PA Expertise S.r.l., società del gruppo Alveo, con sede in Via Pontaccio 8, 20121 Milano, partita IVA 12133450150. Per qualsiasi domanda sulla privacy: <a href="mailto:privacy@alveo.it">privacy@alveo.it</a>. Responsabile della protezione dei dati (DPO): <a href="mailto:dpo@alveo.it">dpo@alveo.it</a>. Per tutto ciò che questa pagina non tratta vale l'<a href="https://www.alveo.it/privacy-policy/">informativa generale del gruppo Alveo</a>.</p>
+
+<h2>2. Che cosa fa l'estensione</h2>
+<p>Il Companion apre un pannello laterale accanto alle pagine di Dynamics 365. Riconosce la maschera in cui sei, spiega campi e impostazioni, risponde a domande e affianca il registratore delle attività (Task Recorder) di Dynamics 365 con una copia arricchita dei passi e delle schermate. Funziona in tre modi:</p>
+<ul>
+  <li><strong>senza collegamento</strong>: le risposte arrivano dalla documentazione pubblica di Microsoft Learn;</li>
+  <li><strong>collegato a Sapient</strong>, il servizio di Alveo, con una chiave personale che l'utente genera dal proprio account Sapient;</li>
+  <li><strong>collegato con un ambito gestito</strong>: come il precedente, con le regole che la tua organizzazione ha impostato in Sapient.</li>
+</ul>
+
+<h2>3. Quali dati tratta e dove restano</h2>
+<table>
+  <tr><th>Dato</th><th>Quando</th><th>Dove resta</th></tr>
+  <tr><td>Struttura della pagina: nome della maschera, nomi ed etichette dei controlli, percorso del menu, messaggi visibili</td><td>Mentre il pannello è aperto, o quando chiedi una spiegazione</td><td>Nel browser. Esce solo con una tua richiesta (punto 4).</td></tr>
+  <tr><td>Passi recenti (che cosa hai cliccato, in quale maschera)</td><td>Durante l'osservazione, che puoi mettere in pausa</td><td>Solo nel browser, in una memoria temporanea e limitata che puoi svuotare</td></tr>
+  <tr><td>Registrazioni: passi, tempi, schermate della scheda</td><td>Solo mentre è attivo il Task Recorder di Dynamics 365</td><td>Nel browser (IndexedDB), cancellabili dal pannello. Escono solo in un file che esporti tu.</td></tr>
+  <tr><td>Valori dei campi</td><td>Mai, salvo che tu attivi «Registra i valori dei campi» nel registratore (spento di base)</td><td>Solo nella registrazione, nel browser. Mai password né campi mascherati, mai inviati in rete.</td></tr>
+  <tr><td>Chiave personale di Sapient</td><td>Quando la inserisci</td><td>Solo su questo dispositivo, nella memoria locale dell'estensione. Non viene sincronizzata.</td></tr>
+  <tr><td>Preferenze (lingua, funzioni attive, indirizzo di Sapient)</td><td>Quando le cambi</td><td>Nella memoria dell'estensione. Il browser può sincronizzarle con il tuo profilo (Google o Microsoft). Non contengono né chiavi né dati delle pagine.</td></tr>
+</table>
+
+<h2>4. Che cosa esce dal browser, e verso chi</h2>
+<ul>
+  <li><strong>Verso Sapient (solo in modalità collegata, con la tua chiave).</strong>
+    <ul>
+      <li>All'apertura del pannello e a ogni cambio di pagina viene inviato solo l'indirizzo (host) dell'ambiente, per sapere di quale ambiente si tratta. Nient'altro della pagina.</li>
+      <li>Quando chiedi una spiegazione o fai una domanda vengono inviati la domanda e la struttura della pagina descritta al punto 3, mai i valori dei campi. Prima dell'invio vedi l'anteprima esatta di ciò che parte.</li>
+      <li>Se attivi «Migliora con l'IA» (spento di base), durante una registrazione vengono inviati il testo dei passi e il punto dell'applicazione in cui sono stati fatti. Mai valori, immagini o nome della società.</li>
+    </ul>
+    Sapient è un servizio del gruppo Alveo ospitato su Microsoft Azure, in data center dell'Unione europea (Paesi Bassi e Svezia). Usa modelli di intelligenza artificiale in esecuzione nello stesso ambiente Azure di Alveo. I dati inviati vengono usati solo per produrre la risposta. Domande e risposte restano nello storico delle conversazioni di Sapient finché non vengono cancellate.</li>
+  <li><strong>Verso Microsoft Learn (solo in modalità non collegata, con un tuo clic).</strong> Viene inviato solo il testo di ricerca che vedi in anteprima, al servizio pubblico di documentazione di Microsoft. Si applica l'informativa di Microsoft.</li>
+  <li><strong>Verso Dynamics 365, nella stessa pagina.</strong> Quando il Task Recorder di Dynamics 365 chiede una schermata, il Companion gliela consegna nella pagina stessa. Da quel momento la gestisce Dynamics 365, nell'ambiente della tua organizzazione.</li>
+</ul>
+<p>Nessun altro invio: niente telemetria, niente statistiche d'uso, niente servizi di terze parti.</p>
+
+<h2>5. Perché l'estensione chiede questi permessi</h2>
+<ul>
+  <li><strong>Accesso ai siti</strong> (<code>&lt;all_urls&gt;</code>). Il browser consente di catturare l'immagine della scheda senza un clic sull'icona solo con questo permesso, e il registratore parte da solo insieme a quello di Dynamics 365. Il permesso serve a questo e a raggiungere l'indirizzo di Sapient impostato. Gli script del Companion girano solo sulle pagine di Dynamics 365 e su quelle che abiliti tu.</li>
+  <li><strong>Pannello laterale, script, menu contestuale, scheda attiva</strong>: per mostrare il pannello, leggere la struttura della pagina e offrire «Chiedi a Sapient Companion» con il tasto destro.</li>
+  <li><strong>Memoria e memoria illimitata</strong>: per conservare nel browser preferenze e registrazioni, che non hanno un limite di lunghezza.</li>
+</ul>
+
+<h2>6. Uso limitato</h2>
+<p>I dati trattati dal Companion sono usati solo per le funzioni descritte qui. Non sono venduti, non sono usati per pubblicità né per valutazioni di credito o di merito, e non sono trasferiti a terzi se non per fornire la funzione richiesta (Sapient, Microsoft Learn) o per obblighi di legge.</p>
+
+<h2>7. I tuoi diritti</h2>
+<p>Puoi cancellare in ogni momento le registrazioni e la memoria dei passi dal pannello, e rimuovere tutti i dati locali disinstallando l'estensione. Per i dati trattati da Sapient puoi esercitare i diritti di accesso, rettifica, cancellazione, limitazione e opposizione previsti dal Regolamento (UE) 2016/679 scrivendo a <a href="mailto:privacy@alveo.it">privacy@alveo.it</a>. Hai anche il diritto di proporre reclamo al Garante per la protezione dei dati personali.</p>
+<p>Se l'estensione ti è stata installata dalla tua organizzazione, l'organizzazione decide come la usa e ti informa sul trattamento sul lavoro.</p>
+
+<h2>8. Modifiche</h2>
+<p>Se l'estensione cambia i dati che tratta, questa informativa viene aggiornata prima della nuova versione, con la data in testa.</p>
+</section>
+
+<hr>
+
+<!-- ===================== ENGLISH ===================== -->
+<section id="en" lang="en">
+<h1>Sapient Companion – Privacy Policy</h1>
+<p class="meta">Version of 12 October 2026</p>
+
+<div class="box">
+<p><strong>In short.</strong> The Companion is a work tool for Microsoft Dynamics 365 consultants and users. It reads the structure of the page you are on (names and labels of fields and forms) to explain it to you. It does not read field values unless you turn that on in the recorder. It sends nothing over the network without an action of yours, except for the cases listed below. It uses no advertising, profiling or anonymous statistics, and it does not sell or hand over data to third parties.</p>
+</div>
+
+<h2>1. Controller</h2>
+<p>The data controller is PA Expertise S.r.l., a company of the Alveo group, registered office Via Pontaccio 8, 20121 Milan, Italy, VAT number IT12133450150. For any privacy question: <a href="mailto:privacy@alveo.it">privacy@alveo.it</a>. Data Protection Officer (DPO): <a href="mailto:dpo@alveo.it">dpo@alveo.it</a>. For anything this page does not cover, the <a href="https://www.alveo.it/privacy-policy/">Alveo group general privacy policy</a> applies.</p>
+
+<h2>2. What the extension does</h2>
+<p>The Companion opens a side panel next to Dynamics 365 pages. It recognises the form you are in, explains fields and settings, answers questions, and works alongside the Dynamics 365 Task Recorder with an enriched copy of the steps and screenshots. It works in three modes:</p>
+<ul>
+  <li><strong>not connected</strong>: answers come from Microsoft Learn's public documentation;</li>
+  <li><strong>connected to Sapient</strong>, Alveo's service, with a personal key the user issues from their own Sapient account;</li>
+  <li><strong>connected with a managed scope</strong>: as above, with the rules your organisation has set in Sapient.</li>
+</ul>
+
+<h2>3. What data it handles and where it stays</h2>
+<table>
+  <tr><th>Data</th><th>When</th><th>Where it stays</th></tr>
+  <tr><td>Page structure: form name, control names and labels, menu path, visible messages</td><td>While the panel is open, or when you ask for an explanation</td><td>In the browser. It leaves only on your request (section 4).</td></tr>
+  <tr><td>Recent steps (what you clicked, in which form)</td><td>While observing, which you can pause</td><td>Only in the browser, in a temporary, bounded memory you can clear</td></tr>
+  <tr><td>Recordings: steps, timings, screenshots of the tab</td><td>Only while the Dynamics 365 Task Recorder is running</td><td>In the browser (IndexedDB), deletable from the panel. They leave only in a file you export.</td></tr>
+  <tr><td>Field values</td><td>Never, unless you turn on «Record field values» in the recorder (off by default)</td><td>Only in the recording, in the browser. Never passwords or masked fields, never sent over the network.</td></tr>
+  <tr><td>Personal Sapient key</td><td>When you enter it</td><td>Only on this device, in the extension's local storage. It is not synced.</td></tr>
+  <tr><td>Preferences (language, enabled features, Sapient address)</td><td>When you change them</td><td>In the extension's storage. The browser may sync them with your profile (Google or Microsoft). They hold no keys and no page data.</td></tr>
+</table>
+
+<h2>4. What leaves the browser, and to whom</h2>
+<ul>
+  <li><strong>To Sapient (connected mode only, with your key).</strong>
+    <ul>
+      <li>When the panel opens and at every page change, only the environment's address (host) is sent, so the panel knows which environment it is. Nothing else from the page.</li>
+      <li>When you ask for an explanation or ask a question, your question and the page structure described in section 3 are sent, never field values. Before sending you see the exact preview of what goes out.</li>
+      <li>If you turn on «Improve with AI» (off by default), during a recording the text of the steps and where in the application they were made are sent. Never values, images or the company name.</li>
+    </ul>
+    Sapient is an Alveo group service hosted on Microsoft Azure, in data centres in the European Union (the Netherlands and Sweden). It uses artificial intelligence models running in the same Alveo Azure environment. The data sent is used only to produce the answer. Questions and answers stay in Sapient's conversation history until they are deleted.</li>
+  <li><strong>To Microsoft Learn (not-connected mode only, on your click).</strong> Only the search text you see in the preview is sent, to Microsoft's public documentation service. Microsoft's privacy statement applies.</li>
+  <li><strong>To Dynamics 365, in the same page.</strong> When the Dynamics 365 Task Recorder asks for a screenshot, the Companion hands it over within the page itself. From then on Dynamics 365 handles it, in your organisation's environment.</li>
+</ul>
+<p>Nothing else is sent: no telemetry, no usage statistics, no third-party services.</p>
+
+<h2>5. Why the extension asks for these permissions</h2>
+<ul>
+  <li><strong>Site access</strong> (<code>&lt;all_urls&gt;</code>). The browser allows capturing the tab's image without a click on the icon only with this permission, and the recorder starts by itself together with the Dynamics 365 one. The permission is used for this and to reach the configured Sapient address. The Companion's scripts run only on Dynamics 365 pages and on the pages you enable.</li>
+  <li><strong>Side panel, scripting, context menu, active tab</strong>: to show the panel, read the page structure and offer «Ask Sapient Companion» on right-click.</li>
+  <li><strong>Storage and unlimited storage</strong>: to keep preferences and recordings in the browser; recordings have no length limit.</li>
+</ul>
+
+<h2>6. Limited use</h2>
+<p>The data handled by the Companion is used only for the features described here. It is not sold, not used for advertising or for creditworthiness or eligibility assessments, and not transferred to third parties except to provide the requested feature (Sapient, Microsoft Learn) or where required by law.</p>
+
+<h2>7. Your rights</h2>
+<p>You can delete recordings and the step memory from the panel at any time, and remove all local data by uninstalling the extension. For data handled by Sapient you can exercise the rights of access, rectification, erasure, restriction and objection under Regulation (EU) 2016/679 by writing to <a href="mailto:privacy@alveo.it">privacy@alveo.it</a>. You also have the right to lodge a complaint with your data protection authority.</p>
+<p>If the extension was installed by your organisation, your organisation decides how it is used and informs you about processing at work.</p>
+
+<h2>8. Changes</h2>
+<p>If the extension changes the data it handles, this policy is updated before the new version, with the date at the top.</p>
+</section>
+
+</main>
+</body>
+</html>
